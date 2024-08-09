@@ -3,164 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>World Clocks</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #121212;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #ffffff;
-        }
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
-        .clocks {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            text-align: center;
-        }
-        .clock {
-            background-color: #1e1e1e;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-        .city {
-            font-size: 1.2em;
-            margin-bottom: 10px;
-            font-weight: 500;
-        }
-        .time {
-            font-size: 2em;
-        }
-        .controls {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-        select {
-            background-color: #333;
-            color: #fff;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-        }
-    </style>
+    <title>Minimalist Clock</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <div class="controls">
-            <select id="clock1">
-                <!-- Time Zone Options -->
-                <option value="America/New_York">New York</option>
-                <option value="Europe/London">London</option>
-                <option value="Europe/Paris">Paris</option>
-                <option value="Europe/Berlin">Berlin</option>
-                <option value="Asia/Tokyo">Tokyo</option>
-                <option value="Australia/Sydney">Sydney</option>
-                <option value="America/Los_Angeles">Los Angeles</option>
-                <option value="America/Chicago">Chicago</option>
-                <option value="Asia/Singapore">Singapore</option>
-                <option value="Asia/Hong_Kong">Hong Kong</option>
-                <option value="Africa/Johannesburg">Johannesburg</option>
-                <option value="America/Sao_Paulo">Sao Paulo</option>
-                <!-- Add more options as needed -->
-            </select>
-            <select id="clock2">
-                <option value="America/New_York">New York</option>
-                <option value="Europe/London">London</option>
-                <option value="Europe/Paris">Paris</option>
-                <option value="Europe/Berlin">Berlin</option>
-                <option value="Asia/Tokyo">Tokyo</option>
-                <option value="Australia/Sydney">Sydney</option>
-                <option value="America/Los_Angeles">Los Angeles</option>
-                <option value="America/Chicago">Chicago</option>
-                <option value="Asia/Singapore">Singapore</option>
-                <option value="Asia/Hong_Kong">Hong Kong</option>
-                <option value="Africa/Johannesburg">Johannesburg</option>
-                <option value="America/Sao_Paulo">Sao Paulo</option>
-                <!-- Add more options as needed -->
-            </select>
-            <select id="clock3">
-                <option value="America/New_York">New York</option>
-                <option value="Europe/London">London</option>
-                <option value="Europe/Paris">Paris</option>
-                <option value="Europe/Berlin">Berlin</option>
-                <option value="Asia/Tokyo">Tokyo</option>
-                <option value="Australia/Sydney">Sydney</option>
-                <option value="America/Los_Angeles">Los Angeles</option>
-                <option value="America/Chicago">Chicago</option>
-                <option value="Asia/Singapore">Singapore</option>
-                <option value="Asia/Hong_Kong">Hong Kong</option>
-                <option value="Africa/Johannesburg">Johannesburg</option>
-                <option value="America/Sao_Paulo">Sao Paulo</option>
-                <!-- Add more options as needed -->
-            </select>
-            <select id="clock4">
-                <option value="America/New_York">New York</option>
-                <option value="Europe/London">London</option>
-                <option value="Europe/Paris">Paris</option>
-                <option value="Europe/Berlin">Berlin</option>
-                <option value="Asia/Tokyo">Tokyo</option>
-                <option value="Australia/Sydney">Sydney</option>
-                <option value="America/Los_Angeles">Los Angeles</option>
-                <option value="America/Chicago">Chicago</option>
-                <option value="Asia/Singapore">Singapore</option>
-                <option value="Asia/Hong_Kong">Hong Kong</option>
-                <option value="Africa/Johannesburg">Johannesburg</option>
-                <option value="America/Sao_Paulo">Sao Paulo</option>
-                <!-- Add more options as needed -->
-            </select>
-        </div>
+        <h1 class="title">World Clocks</h1>
         <div class="clocks">
-            <div class="clock">
-                <div class="city">Clock 1</div>
-                <div id="time1" class="time">00:00:00</div>
+            <div class="clock" id="clock1">
+                <input type="text" class="clock-name" id="name1" placeholder="Clock Name">
+                <p id="time1"></p>
+                <select id="timezone1">
+                    <option value="-12">UTC -12:00</option>
+                    <option value="-11">UTC -11:00</option>
+                    <!-- Add more timezones as needed -->
+                    <option value="0" selected>UTC 00:00</option>
+                    <option value="1">UTC +01:00</option>
+                    <!-- ... -->
+                    <option value="12">UTC +12:00</option>
+                </select>
             </div>
-            <div class="clock">
-                <div class="city">Clock 2</div>
-                <div id="time2" class="time">00:00:00</div>
+            <div class="clock" id="clock2">
+                <input type="text" class="clock-name" id="name2" placeholder="Clock Name">
+                <p id="time2"></p>
+                <select id="timezone2">
+                    <option value="-12">UTC -12:00</option>
+                    <option value="-11">UTC -11:00</option>
+                    <!-- Add more timezones as needed -->
+                    <option value="0" selected>UTC 00:00</option>
+                    <option value="1">UTC +01:00</option>
+                    <!-- ... -->
+                    <option value="12">UTC +12:00</option>
+                </select>
             </div>
-            <div class="clock">
-                <div class="city">Clock 3</div>
-                <div id="time3" class="time">00:00:00</div>
+            <div class="clock" id="clock3">
+                <input type="text" class="clock-name" id="name3" placeholder="Clock Name">
+                <p id="time3"></p>
+                <select id="timezone3">
+                    <option value="-12">UTC -12:00</option>
+                    <option value="-11">UTC -11:00</option>
+                    <!-- Add more timezones as needed -->
+                    <option value="0" selected>UTC 00:00</option>
+                    <option value="1">UTC +01:00</option>
+                    <!-- ... -->
+                    <option value="12">UTC +12:00</option>
+                </select>
             </div>
-            <div class="clock">
-                <div class="city">Clock 4</div>
-                <div id="time4" class="time">00:00:00</div>
+            <div class="clock" id="clock4">
+                <input type="text" class="clock-name" id="name4" placeholder="Clock Name">
+                <p id="time4"></p>
+                <select id="timezone4">
+                    <option value="-12">UTC -12:00</option>
+                    <option value="-11">UTC -11:00</option>
+                    <!-- Add more timezones as needed -->
+                    <option value="0" selected>UTC 00:00</option>
+                    <option value="1">UTC +01:00</option>
+                    <!-- ... -->
+                    <option value="12">UTC +12:00</option>
+                </select>
             </div>
         </div>
     </div>
-
-    <script>
-        function updateTime() {
-            const options = { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' };
-
-            document.getElementById('time1').textContent = new Date().toLocaleTimeString(document.getElementById('clock1').value, options);
-            document.getElementById('time2').textContent = new Date().toLocaleTimeString(document.getElementById('clock2').value, options);
-            document.getElementById('time3').textContent = new Date().toLocaleTimeString(document.getElementById('clock3').value, options);
-            document.getElementById('time4').textContent = new Date().toLocaleTimeString(document.getElementById('clock4').value, options);
-        }
-
-        function setupEventListeners() {
-            document.getElementById('clock1').addEventListener('change', updateTime);
-            document.getElementById('clock2').addEventListener('change', updateTime);
-            document.getElementById('clock3').addEventListener('change', updateTime);
-            document.getElementById('clock4').addEventListener('change', updateTime);
-        }
-
-        setInterval(updateTime, 1000);
-        updateTime();
-        setupEventListeners();
-    </script>
+    <script src="scripts.js"></script>
 </body>
 </html>
